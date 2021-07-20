@@ -7,7 +7,7 @@ baseline <- read_csv("C:\\Users\\kjeme\\OneDrive\\Desktop\\Emerson Microbial Exp
 baseline <- select(baseline, -X24) #got rid of this column
 for (i in 2:ncol(baseline)) {
   if (str_detect(baseline[1,i],"%")) {
-    baseline[,i] <-as.numeric(strsplit(c(baseline[,i]), "%"))
+    baseline[,i] <-as.numeric(strsplit(c(baseline[[i]]), "%"))
   }
 }
 
